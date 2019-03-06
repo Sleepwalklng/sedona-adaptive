@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @font-face {
   font-family: "PT sans";
   src: url("../fonts/ptsans.woff2"), url("../fonts/ptsans.woff");
@@ -102,6 +103,110 @@ img {
   height: 85px;
   margin: 0 auto; }
 
+.intro {
+  position: relative;
+  min-height: 160px;
+  margin-top: -30px;
+  padding: 51px 45px 60px;
+  line-height: 0;
+  background-color: #81b3d2;
+  background-image: url("../img/bg-intro-triangle-mobile.svg"), url("../img/bg-back-mobile@1x.jpg");
+  background-repeat: no-repeat, no-repeat;
+  background-position: center bottom;
+  -webkit-background-size: cover, 768px auto;
+          background-size: cover, 768px auto; }
+
+.intro--index {
+  min-height: 389px;
+  padding: 90px 20px 86px;
+  -webkit-background-size: cover, cover;
+          background-size: cover, cover; }
+
+.intro__text {
+  max-width: 360px;
+  margin: 0 auto; }
+  .intro__text img {
+    width: 100%; }
+
+.button-burger {
+  position: absolute;
+  top: 17px;
+  right: 23px;
+  width: 23px;
+  height: 22px;
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  cursor: pointer; }
+
+/*прячет кнопку без js*/
+.button-burger--no-js {
+  display: none; }
+
+/*гамбургер при закрытом меню*/
+.button-burger__icon {
+  position: relative;
+  display: block;
+  height: 4px;
+  background-color: #81b3d2;
+  -webkit-transition: top 0.2s 0.2s, -webkit-transform 0.2s;
+  transition: top 0.2s 0.2s, -webkit-transform 0.2s;
+  -o-transition: top 0.2s 0.2s, transform 0.2s;
+  transition: top 0.2s 0.2s, transform 0.2s;
+  transition: top 0.2s 0.2s, transform 0.2s, -webkit-transform 0.2s; }
+
+.button-burger__icon::before,
+.button-burger__icon::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: #81b3d2;
+  -webkit-transition: top 0.2s 0.2s, -webkit-transform 0.2s;
+  transition: top 0.2s 0.2s, -webkit-transform 0.2s;
+  -o-transition: top 0.2s 0.2s, transform 0.2s;
+  transition: top 0.2s 0.2s, transform 0.2s;
+  transition: top 0.2s 0.2s, transform 0.2s, -webkit-transform 0.2s; }
+
+.button-burger__icon::before {
+  top: -9px; }
+
+.button-burger__icon::after {
+  top: 9px; }
+
+/*крестик при открытом меню*/
+.button-burger__icon--open {
+  -webkit-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  -webkit-transition: top 0.2s, -webkit-transform 0.2s 0.2s;
+  transition: top 0.2s, -webkit-transform 0.2s 0.2s;
+  -o-transition: top 0.2s, transform 0.2s 0.2s;
+  transition: top 0.2s, transform 0.2s 0.2s;
+  transition: top 0.2s, transform 0.2s 0.2s, -webkit-transform 0.2s 0.2s; }
+
+.button-burger__icon--open::before {
+  top: 0;
+  -webkit-transform: rotate(90deg);
+      -ms-transform: rotate(90deg);
+          transform: rotate(90deg);
+  -webkit-transition: top 0.2s, -webkit-transform 0.2s 0.2s;
+  transition: top 0.2s, -webkit-transform 0.2s 0.2s;
+  -o-transition: top 0.2s, transform 0.2s 0.2s;
+  transition: top 0.2s, transform 0.2s 0.2s;
+  transition: top 0.2s, transform 0.2s 0.2s, -webkit-transform 0.2s 0.2s;
+  background-color: #ffffff; }
+
+.button-burger__icon--open::after {
+  top: 0;
+  -webkit-transition: top 0.2s, -webkit-transform 0.2s 0.2s;
+  transition: top 0.2s, -webkit-transform 0.2s 0.2s;
+  -o-transition: top 0.2s, transform 0.2s 0.2s;
+  transition: top 0.2s, transform 0.2s 0.2s;
+  transition: top 0.2s, transform 0.2s 0.2s, -webkit-transform 0.2s 0.2s;
+  background-color: #ffffff; }
+
 @media (min-width: 768px) {
     .main-nav__list {
       display: -webkit-box;
@@ -145,7 +250,33 @@ img {
     .main-nav__logo-link {
       position: absolute;
       top: 0;
-      left: calc(50% - 102px / 2); } }
+      left: calc(50% - 102px / 2); }
+    .intro {
+      min-height: 290px;
+      margin-top: 0;
+      padding: 96px 20px;
+      background-image: url("../img/bg-intro-triangle-tablet.svg"), url("../img/bg-back-desktop@1x.jpg");
+      -webkit-background-size: 100%, 1200px auto;
+              background-size: 100%, 1200px auto; }
+    .intro--index {
+      padding: 78px 20px 90px;
+      -webkit-background-size: 100%, cover;
+              background-size: 100%, cover; }
+    .intro__text {
+      max-width: 460px; }
+    .button-burger {
+      display: none; }
+    .button-burger__icon {
+      display: none; }
+    .button-burger__icon::before,
+    .button-burger__icon::after {
+      display: none; }
+    .button-burger__icon--open {
+      display: none; }
+    .button-burger__icon--open::before {
+      display: none; }
+    .button-burger__icon--open::after {
+      display: none; } }
 
 @media (min-width: 1200px) {
     .main-nav__logo-link {
@@ -154,4 +285,23 @@ img {
       height: 96px; }
   .main-nav__logo-link img {
     width: 187px;
-    height: 96px; } }
+    height: 96px; }
+    .intro {
+      min-height: 302px;
+      padding-top: 103px;
+      background-image: url("../img/bg-intro-triangle-desktop.svg"), url("../img/bg-back-desktop@1x.jpg"); }
+    .intro--index {
+      -webkit-background-size: 100%, cover;
+              background-size: 100%, cover; } }
+
+@media (-webkit-min-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3/2), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
+    .intro {
+      background-image: url("../img/bg-intro-triangle-mobile.svg"), url("../img/bg-back-mobile@2x.jpg"); } }
+
+@media (min-width: 768px) and (-webkit-min-device-pixel-ratio: 1.5), (min-width: 768px) and (-o-min-device-pixel-ratio: 3/2), (min-width: 768px) and (min-resolution: 144dpi), (min-width: 768px) and (min-resolution: 1.5dppx) {
+    .intro {
+      background-image: url("../img/bg-intro-triangle-tablet.svg"), url("../img/bg-back-desktop@2x.jpg"); } }
+
+@media (min-width: 1200px) and (-webkit-min-device-pixel-ratio: 1.5), (min-width: 1200px) and (-o-min-device-pixel-ratio: 3/2), (min-width: 1200px) and (min-resolution: 144dpi), (min-width: 1200px) and (min-resolution: 1.5dppx) {
+    .intro {
+      background-image: url("../img/bg-intro-triangle-desktop.svg"), url("../img/bg-back-desktop@2x.jpg"); } }
