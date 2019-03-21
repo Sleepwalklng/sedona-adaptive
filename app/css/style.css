@@ -409,12 +409,20 @@ img {
     background-color: #e5e5e5; }
 
 .map__frame {
+  overflow: hidden;
+  position: relative;
   width: 100%;
   height: 350px;
   text-transform: none;
   background-image: url("../img/bg-map-mobile@1x.jpg");
   background-repeat: no-repeat;
   background-position: 0 50%; }
+  .map__frame .map__frame iframe {
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute; }
 
 .page-footer__item--text {
   margin: 29px auto 36px;
@@ -1187,6 +1195,8 @@ img {
       -webkit-order: 0;
           -ms-flex-order: 0;
               order: 0; }
+    .our-services__title--housing::before {
+      left: calc(50% - 38px); }
     .our-services__title--food::before {
       top: -97px;
       left: calc(50% - 39px);
@@ -1564,11 +1574,7 @@ img {
       width: 66%;
       padding: 0; }
     .features__photo {
-      width: 50%; }
-    .our-services__title--food::before {
-      left: -20%; }
-    .our-services__title--souvenirs::before {
-      left: -20%; } }
+      width: 50%; } }
 
 @media (min-width: 1070px) {
   .user-contact__inner {
